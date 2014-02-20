@@ -21,7 +21,7 @@ public interface IViewImplementor extends Serializable{
 	
 	public abstract View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState);
 	
-	public abstract void onActivityCreated();
+	public abstract void onActivityCreated(Bundle savedInstanceState);
 	
 	public abstract void onActivityResult(int requestCode, int resultCode, Intent data);
 	

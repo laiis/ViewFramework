@@ -29,7 +29,7 @@ public abstract class AbstractViewImplementorAdapter implements IViewImplementor
 	}
 
 	@Override
-	public void onActivityCreated() {
+	public void onActivityCreated(Bundle savedInstanceState) {
 		// To override and implement this method if you need it,
 		// but do not super.thisMethod();
 	}
