@@ -1,6 +1,6 @@
 package idv.laiis.viewframework.factories;
 
-import idv.laiis.viewframework.configs.ViewFrameworkLocalConfig;
+import idv.laiis.viewframework.configs.LocalConfig;
 import idv.laiis.viewframework.utils.DataUtils;
 
 import java.util.ArrayList;
@@ -83,10 +83,10 @@ public final class BundleFactory {
 		return bundle;
 	}
 	
-	public final static Bundle getMainBundleDefault(String viewImplName, Bundle subBundle) {
+	public final static Bundle getMainBundleDefault(int viewType, Bundle subBundle) {
 		Bundle args = new Bundle();
-		args.putString(ViewFrameworkLocalConfig.MAIN_VIEW, viewImplName);
-		args.putBundle(ViewFrameworkLocalConfig.MAIN_ARGS, subBundle);
+		args.putInt(LocalConfig.MAIN_VIEW, viewType);
+		args.putBundle(LocalConfig.MAIN_ARGS, subBundle);
 
 		return args;
 	}

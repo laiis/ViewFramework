@@ -29,7 +29,7 @@ public abstract class AbstractViewImplementorAdapter implements IViewImplementor
 	}
 
 	@Override
-	public void onActivityCreated() {
+	public void onActivityCreated(Bundle savedInstanceState) {
 		// To override and implement this method if you need it,
 		// but do not super.thisMethod();
 	}
@@ -121,4 +121,17 @@ public abstract class AbstractViewImplementorAdapter implements IViewImplementor
 	public IViewImplementor getParentViewImpl() {
 		return mParentViewImpl;
 	}
+
+	@Override
+	public void onInitial(FragmentActivity activity, Fragment fragment,Bundle savedInstanceState) {
+		this.mActivity=activity;
+		this.mFragment=fragment;
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		// To override and implement this method if you need it,
+		// but do not super.thisMethod();		
+	}
+	
 }

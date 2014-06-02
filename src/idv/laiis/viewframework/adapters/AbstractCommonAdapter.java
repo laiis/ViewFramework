@@ -25,8 +25,8 @@ public abstract class AbstractCommonAdapter<T> extends BaseAdapter{
 	private Comparator<T> mComparator;
 	private Object mData;
 	
-	public AbstractCommonAdapter(Fragment fragment,Class<?> cls){
-		this.mContext=fragment.getActivity();
+	public AbstractCommonAdapter(Context context,Fragment fragment,Class<?> cls){
+		this.mContext=context;
 		this.mCls=cls;
 		this.mFragment=fragment;
 	}

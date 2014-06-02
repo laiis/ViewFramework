@@ -21,7 +21,7 @@ public interface IViewImplementor extends Serializable{
 	
 	public abstract View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState);
 	
-	public abstract void onActivityCreated();
+	public abstract void onActivityCreated(Bundle savedInstanceState);
 	
 	public abstract void onActivityResult(int requestCode, int resultCode, Intent data);
 	
@@ -47,12 +47,14 @@ public interface IViewImplementor extends Serializable{
 	
 	public abstract boolean onCreateOptionsMenu(Menu menu, MenuInflater inflater);
 	
-	public abstract void onInitial(FragmentActivity activity,Fragment fragment);
+	public abstract void onInitial(FragmentActivity activity,Fragment fragment,Bundle savedInstanceState);
 	
 	public abstract void refreshFragment();
 	
 	public abstract void setParentViewImpl(IViewImplementor parentViewImpl);
 	
 	public abstract IViewImplementor getParentViewImpl();
+	
+	public abstract void onSaveInstanceState(Bundle outState);
 	
 }

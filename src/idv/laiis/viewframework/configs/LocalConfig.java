@@ -1,6 +1,6 @@
 package idv.laiis.viewframework.configs;
 
-public interface ViewFrameworkLocalConfig {
+public interface LocalConfig {
 	
 	public static final boolean IS_DEBUG= true;
 	

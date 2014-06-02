@@ -8,12 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.widget.BaseExpandableListAdapter;
 
 @SuppressLint("UseSparseArrays")
 public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableListAdapter {
 
+	protected Context mContext;
 	protected Fragment mFragment;
 	protected Class<?> mParentCls;
 	protected Class<?> mChildCls;
@@ -24,7 +26,8 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 	private List<T> mParentList = Collections.synchronizedList(new ArrayList<T>());
 	private Map<Integer, List<T>> mParentMap = Collections.synchronizedMap(new HashMap<Integer, List<T>>());
 
-	public AbstractCommonExpandableAdapter(Fragment fragment, Class<?> parentCls, Class<?> childCls) {
+	public AbstractCommonExpandableAdapter(Context context, Fragment fragment, Class<?> parentCls, Class<?> childCls) {
+		this.mContext = context;
 		this.mFragment = fragment;
 		this.mParentCls = parentCls;
 		this.mChildCls = childCls;
@@ -37,10 +40,10 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
-		if(mParentMap.get(groupPosition)!=null){
-			return mParentMap.get(groupPosition).size();	
+		if (mParentMap.get(groupPosition) != null) {
+			return mParentMap.get(groupPosition).size();
 		}
-		
+
 		return 0;
 	}
 
@@ -51,8 +54,8 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 
 	@Override
 	public T getChild(int groupPosition, int childPosition) {
-		if(mParentMap.get(groupPosition)!=null){
-			return mParentMap.get(groupPosition).get(childPosition);	
+		if (mParentMap.get(groupPosition) != null) {
+			return mParentMap.get(groupPosition).get(childPosition);
 		}
 		return null;
 	}
@@ -104,8 +107,8 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 	public void removeAllParentItems() {
 		mParentList.clear();
 	}
-	
-	public void removeAllChildItems(){
+
+	public void removeAllChildItems() {
 		mParentMap.clear();
 	}
 
@@ -132,12 +135,12 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 	public void setmChildComparator(Comparator<T> mChildComparator) {
 		this.mChildComparator = mChildComparator;
 	}
-	
-	public List<T> getGroups(){
+
+	public List<T> getGroups() {
 		return mParentList;
 	}
-	
-	public List<T> getChilds(int i){
+
+	public List<T> getChilds(int i) {
 		return mParentMap.get(i);
 	}
 }

@@ -1,6 +1,6 @@
 package idv.laiis.viewframework.utils;
 
-import idv.laiis.viewframework.configs.ViewFrameworkLocalConfig;
+import idv.laiis.viewframework.configs.LocalConfig;
 import android.content.Context;
 import android.util.Log;
 import android.view.Gravity;
@@ -41,7 +41,7 @@ public final class Utils {
 	}
 
 	public final static void logDebugMsg(Class<?> cls, CharSequence debugMsg) {
-		logDebugMsg(cls, debugMsg, ViewFrameworkLocalConfig.IS_DEBUG);
+		logDebugMsg(cls, debugMsg, LocalConfig.IS_DEBUG);
 	}
 
 	public final static void logErrorMsg(Class<?> cls, Exception e, boolean isLogError) {
@@ -52,7 +52,7 @@ public final class Utils {
 	}
 
 	public final static void logErrorMsg(Class<?> cls, Exception e) {
-		logErrorMsg(cls, e, ViewFrameworkLocalConfig.IS_ERROR);
+		logErrorMsg(cls, e, LocalConfig.IS_ERROR);
 	}
 
 }
