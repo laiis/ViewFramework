@@ -9,14 +9,12 @@ import java.util.Map;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.widget.BaseExpandableListAdapter;
 
 @SuppressLint("UseSparseArrays")
 public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableListAdapter {
 
 	protected Context mContext;
-	protected Fragment mFragment;
 	protected Class<?> mParentCls;
 	protected Class<?> mChildCls;
 	private Object mParentData;
@@ -26,9 +24,8 @@ public abstract class AbstractCommonExpandableAdapter<T> extends BaseExpandableL
 	private List<T> mParentList = Collections.synchronizedList(new ArrayList<T>());
 	private Map<Integer, List<T>> mParentMap = Collections.synchronizedMap(new HashMap<Integer, List<T>>());
 
-	public AbstractCommonExpandableAdapter(Context context, Fragment fragment, Class<?> parentCls, Class<?> childCls) {
+	public AbstractCommonExpandableAdapter(Context context,  Class<?> parentCls, Class<?> childCls) {
 		this.mContext = context;
-		this.mFragment = fragment;
 		this.mParentCls = parentCls;
 		this.mChildCls = childCls;
 	}

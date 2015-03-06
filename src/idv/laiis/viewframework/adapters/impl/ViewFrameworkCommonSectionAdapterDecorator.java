@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.List;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,8 +21,8 @@ public final class ViewFrameworkCommonSectionAdapterDecorator<T> extends Abstrac
 	private List<Integer> mSectionList = Collections.synchronizedList(new ArrayList<Integer>());
 	private Class<?> mSectionCls;
 
-	public ViewFrameworkCommonSectionAdapterDecorator(Context context, Fragment fragment, Class<?> cls, Class<?> sectionCls, AbstractCommonAdapter<T> commonAdapter) {
-		super(context, fragment, cls);
+	public ViewFrameworkCommonSectionAdapterDecorator(Context context, Class<?> cls, Class<?> sectionCls, AbstractCommonAdapter<T> commonAdapter) {
+		super(context,  cls);
 		this.mCommonAdapter = commonAdapter;
 		this.mSectionCls = sectionCls;
 	}
@@ -124,13 +123,13 @@ public final class ViewFrameworkCommonSectionAdapterDecorator<T> extends Abstrac
 				break;
 			}
 
-			convertView = viewHolder.initialViewHolder(mContext, mFragment, this, position);
+			convertView = viewHolder.initialViewHolder(mContext,  this, position);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (AbstractViewHolder) convertView.getTag();
 		}
 
-		viewHolder.filloutViewHolderContent(mContext, mFragment, getItem(position), getData(), position);
+		viewHolder.filloutViewHolderContent(mContext,  getItem(position), getData(), position);
 
 		return convertView;
 	}

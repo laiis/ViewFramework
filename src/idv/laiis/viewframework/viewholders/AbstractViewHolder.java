@@ -1,7 +1,6 @@
 package idv.laiis.viewframework.viewholders;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.BaseAdapter;
 
@@ -13,7 +12,7 @@ import android.widget.BaseAdapter;
  */
 public abstract class AbstractViewHolder {
 
-	public abstract View initialViewHolder(Context context, Fragment fragment, BaseAdapter parent, int index);
+	public abstract View initialViewHolder(Context context, BaseAdapter parent, int index);
 
-	public abstract void filloutViewHolderContent(Context context, Fragment fragment, Object item, Object data, int index);
+	public abstract void filloutViewHolderContent(Context context,  Object item, Object data, int index);
 }
