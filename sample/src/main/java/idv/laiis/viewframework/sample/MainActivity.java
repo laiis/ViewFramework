@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 
         for (int i = 0; i < 100; i++) {
             TestModel tm = new TestModel();
-            tm.title = String.valueOf('A' + i);
+            tm.title = String.valueOf((char) ('A' + i));
             tm.desc = "test desc";
 
             list.add(tm);
