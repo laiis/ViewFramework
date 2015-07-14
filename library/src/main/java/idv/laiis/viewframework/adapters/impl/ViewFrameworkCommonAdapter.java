@@ -12,6 +12,10 @@ import idv.laiis.viewframework.viewholders.AbstractViewHolder;
 
 public final class ViewFrameworkCommonAdapter<T> extends AbstractCommonAdapter<T> {
 
+    public ViewFrameworkCommonAdapter(Context context, Class<?> cls) {
+        this(context, null, cls);
+    }
+
     public ViewFrameworkCommonAdapter(Context context, Fragment fragment, Class<?> cls) {
         super(context, fragment, cls);
     }
@@ -29,6 +33,7 @@ public final class ViewFrameworkCommonAdapter<T> extends AbstractCommonAdapter<T
         }
 
         viewHolder.filloutViewHolderContent(mContext, mFragment, getItem(position), getData(), position);
+        viewHolder.playAnimationOrAnimator();
 
         return convertView;
     }
