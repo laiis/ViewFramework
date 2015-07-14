@@ -37,4 +37,9 @@ public class TestViewHolder extends AbstractViewHolder {
             mTvDesc.setText(testModel.desc);
         }
     }
+
+    @Override
+    public void playAnimationOrAnimator() {
+        super.playAnimationOrAnimator();
+    }
 }

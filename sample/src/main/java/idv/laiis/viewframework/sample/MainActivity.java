@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
     private void initials() {
         if (mAdapter == null) {
-            mAdapter = new ViewFrameworkCommonAdapter<TestModel>(this, null, TestViewHolder.class);
+            mAdapter = new ViewFrameworkCommonAdapter<TestModel>(this, TestViewHolder.class);
         }
 
         mListView = (ListView) findViewById(android.R.id.list);
