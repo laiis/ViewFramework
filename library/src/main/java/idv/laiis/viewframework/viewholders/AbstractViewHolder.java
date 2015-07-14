@@ -19,4 +19,8 @@ public abstract class AbstractViewHolder {
 
     public abstract void filloutViewHolderContent(Context context, Fragment fragment, Object item, Object data,
             int index);
+
+    public void playAnimationOrAnimator() {
+
+    }
 }
